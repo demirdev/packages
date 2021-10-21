@@ -685,10 +685,13 @@ typedef _ContrastCalculator = double Function(Color a, Color b, int alpha);
 ///   * [PaletteGenerator], a class for selecting color palettes from images.
 class PaletteColor with Diagnosticable {
   /// Generate a [PaletteColor].
-  PaletteColor(this.color, this.population);
+  PaletteColor(this.color, this.population, {this.name});
 
   static const double _minContrastTitleText = 3.0;
   static const double _minContrastBodyText = 4.5;
+
+  /// The name of color
+  final String? name;
 
   /// The color that this palette color represents.
   final Color color;
